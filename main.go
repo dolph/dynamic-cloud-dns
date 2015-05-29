@@ -9,7 +9,7 @@ import (
 )
 
 
-func main() {
+func icanhazip() string {
     // this requires Go 1.4 due to the TLS implementation
     resp, err := http.Get("https://icanhazip.com/")
     if err != nil {
@@ -31,6 +31,13 @@ func main() {
 
     // remove the trailing newline
     ip = strings.TrimRight(ip, "\n")
+
+    return ip
+}
+
+
+func main() {
+    ip := icanhazip()
 
     fmt.Println(ip)
 }
