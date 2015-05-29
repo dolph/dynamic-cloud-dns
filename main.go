@@ -24,7 +24,7 @@ func main() {
         Transport: transport,
     }
 
-    resp, err := http.Get("https://icanhazip.com/")
+    resp, err := client.Get("https://icanhazip.com/")
     if err != nil {
         fmt.Println(err)
         os.Exit(1)
