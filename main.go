@@ -11,6 +11,7 @@ func main() {
     // this requires Go 1.4 due to the TLS implementation
     resp, err := http.Get("https://icanhazip.com/")
     if err != nil {
+        fmt.Println("Unable to fetch icanhazip.")
         fmt.Println(err)
         os.Exit(1)
     }
@@ -18,6 +19,7 @@ func main() {
     defer resp.Body.Close()
     body, err := ioutil.ReadAll(resp.Body)
     if err != nil {
+        fmt.Println("Unable to read response body.")
         fmt.Println(err)
         os.Exit(1)
     }
